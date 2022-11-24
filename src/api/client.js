@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://api.artzero.net";
+const baseURL = "https://api.artzero.net"; //"http://rpc-smartnet.test.azero.dev/"; //"https://api.artzero.net";
 
 export const clientAPI = async (method, url, options) => {
   if (!options) options = {};

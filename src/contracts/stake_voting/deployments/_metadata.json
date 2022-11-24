@@ -1,0 +1,357 @@
+{
+  "source": {
+    "hash": "0x65cf3d53cc6f2723f70f4b38008f867f071083d0233c6c7c127954e112e7eb9e",
+    "language": "ink! 3.4.0",
+    "compiler": "rustc 1.67.0-nightly"
+  },
+  "contract": {
+    "name": "stake_voting",
+    "version": "0.1.0",
+    "authors": [
+      "0xFar5eer 0xFar5eer@gmail.com"
+    ]
+  },
+  "V3": {
+    "spec": {
+      "constructors": [
+        {
+          "args": [],
+          "docs": [],
+          "label": "default",
+          "payable": false,
+          "selector": "0xed4b9d1b"
+        }
+      ],
+      "docs": [],
+      "events": [],
+      "messages": [
+        {
+          "args": [
+            {
+              "label": "stake_operator_information",
+              "type": {
+                "displayName": [
+                  "StakeOperatorInformation"
+                ],
+                "type": 7
+              }
+            }
+          ],
+          "docs": [],
+          "label": "add_one_stake_operator",
+          "mutates": true,
+          "payable": false,
+          "returnType": null,
+          "selector": "0x1fd08b28"
+        },
+        {
+          "args": [
+            {
+              "label": "stake_operator_information_list",
+              "type": {
+                "displayName": [
+                  "Vec"
+                ],
+                "type": 11
+              }
+            }
+          ],
+          "docs": [],
+          "label": "add_multiple_stake_operators",
+          "mutates": true,
+          "payable": false,
+          "returnType": null,
+          "selector": "0x48160c5c"
+        },
+        {
+          "args": [],
+          "docs": [],
+          "label": "get_stake_operators",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "Vec"
+            ],
+            "type": 11
+          },
+          "selector": "0xc367cb7e"
+        },
+        {
+          "args": [
+            {
+              "label": "stake_operator_id",
+              "type": {
+                "displayName": [
+                  "AccountId"
+                ],
+                "type": 1
+              }
+            }
+          ],
+          "docs": [],
+          "label": "get_stake_operator_by_account_id",
+          "mutates": false,
+          "payable": false,
+          "returnType": {
+            "displayName": [
+              "StakeOperatorInformation"
+            ],
+            "type": 7
+          },
+          "selector": "0xa1291b48"
+        }
+      ]
+    },
+    "storage": {
+      "struct": {
+        "fields": [
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0000000000000000000000000000000000000000000000000000000000000000",
+                "ty": 0
+              }
+            },
+            "name": "stake_operator_id_to_position"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0100000000000000000000000000000000000000000000000000000000000000",
+                "ty": 6
+              }
+            },
+            "name": "position_to_stake_operator_information"
+          },
+          {
+            "layout": {
+              "cell": {
+                "key": "0x0200000000000000000000000000000000000000000000000000000000000000",
+                "ty": 4
+              }
+            },
+            "name": "length_of_stake_operator_information_list"
+          }
+        ]
+      }
+    },
+    "types": [
+      {
+        "id": 0,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 1
+            },
+            {
+              "name": "V",
+              "type": 4
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 1,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 2,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_env",
+            "types",
+            "AccountId"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "type": {
+          "def": {
+            "array": {
+              "len": 32,
+              "type": 3
+            }
+          }
+        }
+      },
+      {
+        "id": 3,
+        "type": {
+          "def": {
+            "primitive": "u8"
+          }
+        }
+      },
+      {
+        "id": 4,
+        "type": {
+          "def": {
+            "primitive": "u32"
+          }
+        }
+      },
+      {
+        "id": 5,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "type": 2,
+                  "typeName": "[u8; 32]"
+                }
+              ]
+            }
+          },
+          "path": [
+            "ink_primitives",
+            "Key"
+          ]
+        }
+      },
+      {
+        "id": 6,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "offset_key",
+                  "type": 5,
+                  "typeName": "Key"
+                }
+              ]
+            }
+          },
+          "params": [
+            {
+              "name": "K",
+              "type": 4
+            },
+            {
+              "name": "V",
+              "type": 7
+            }
+          ],
+          "path": [
+            "ink_storage",
+            "lazy",
+            "mapping",
+            "Mapping"
+          ]
+        }
+      },
+      {
+        "id": 7,
+        "type": {
+          "def": {
+            "composite": {
+              "fields": [
+                {
+                  "name": "stake_operator_id",
+                  "type": 1,
+                  "typeName": "AccountId"
+                },
+                {
+                  "name": "name",
+                  "type": 8,
+                  "typeName": "String"
+                },
+                {
+                  "name": "own_staked",
+                  "type": 9,
+                  "typeName": "Balance"
+                },
+                {
+                  "name": "other_staked",
+                  "type": 9,
+                  "typeName": "Balance"
+                },
+                {
+                  "name": "commission",
+                  "type": 3,
+                  "typeName": "u8"
+                },
+                {
+                  "name": "total_stakers",
+                  "type": 10,
+                  "typeName": "u16"
+                },
+                {
+                  "name": "vote_points",
+                  "type": 9,
+                  "typeName": "Balance"
+                }
+              ]
+            }
+          },
+          "path": [
+            "stake_voting",
+            "stake_voting",
+            "StakeOperatorInformation"
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "type": {
+          "def": {
+            "primitive": "str"
+          }
+        }
+      },
+      {
+        "id": 9,
+        "type": {
+          "def": {
+            "primitive": "u128"
+          }
+        }
+      },
+      {
+        "id": 10,
+        "type": {
+          "def": {
+            "primitive": "u16"
+          }
+        }
+      },
+      {
+        "id": 11,
+        "type": {
+          "def": {
+            "sequence": {
+              "type": 7
+            }
+          }
+        }
+      }
+    ]
+  }
+}
