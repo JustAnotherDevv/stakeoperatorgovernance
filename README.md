@@ -1,6 +1,7 @@
 # Introduction
 
-This is a template for you to quickly build dapp on Aleph Zero Network. Feel free to contribute to the project.
+Stake Operator governance is the project that was created during Hack On Chain 2022 hackathon for Aleph Zero track
+The repo with smart contracts is located [here](https://github.com/0xFar5eer/HackOnChain-AlephZero/)
 
 # Features
 
